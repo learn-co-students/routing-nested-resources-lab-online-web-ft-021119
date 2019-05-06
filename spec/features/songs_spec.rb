@@ -34,6 +34,7 @@ describe "songs", type:  :feature do
       end
     end
   end
+  
   describe "/songs/:id" do
 
     it "links to the artist" do
