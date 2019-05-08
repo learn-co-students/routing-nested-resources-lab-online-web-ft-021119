@@ -1,12 +1,10 @@
 require 'pry'
 class SongsController < ApplicationController
   def index
-    # binding.pry
     if params[:artist_id]
-      # binding.pry
        @artist = Artist.find_by(id: params[:artist_id])
         if @artist == nil
-          redirect_to artists_path
+          redirect_to artists_path, alert: "Artist not found"
         else
           @songs = @artist.songs
         end
